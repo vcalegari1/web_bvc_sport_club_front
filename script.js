@@ -11,10 +11,14 @@ registrationForm.addEventListener('submit', (event) => {
     event.preventDefault(); 
 
     const formData = new FormData(registrationForm);
+    const userID = formData.get('userID');
+    const fullName = formData.get('fullName');
+    const address = formData.get('address');
     const status = formData.get('status');
+    
   
-    const apiEndpoint = 'https://web-bvc-sport-club-0a7m.onrender.com/api/register'; 
-    //const apiEndpoint = 'http://localhost:3000/api/register'; 
+    //const apiEndpoint = 'https://web-bvc-sport-club-0a7m.onrender.com/api/register'; 
+    const apiEndpoint = 'http://localhost:3000/api/register'; 
 
     fetch(apiEndpoint, {
         method: 'POST',
@@ -22,7 +26,7 @@ registrationForm.addEventListener('submit', (event) => {
           'Content-Type': 'application/json' 
       },
         body: JSON.stringify({
-          status,
+          userID, fullName, address, status
         }) 
     })
     .then(response => {
