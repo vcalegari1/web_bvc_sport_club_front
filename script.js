@@ -13,7 +13,7 @@ registrationForm.addEventListener('submit', (event) => {
     const formData = new FormData(registrationForm);
     const status = formData.get('status');
   
-    const apiEndpoint = 'https://web-bvc-sport-club.onrender.com/api/register'; 
+    const apiEndpoint = 'https://web-bvc-sport-club-0a7m.onrender.com/api/register'; 
     //const apiEndpoint = 'http://localhost:3000/api/register'; 
 
     fetch(apiEndpoint, {
